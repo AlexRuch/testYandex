@@ -18,7 +18,7 @@ public class CounterServiceImpl implements CounterService {
         long minuteCounter = 0;
         long currentTime = new Date().getTime();
         for (Long time : counterDataList) {
-            if (time > (currentTime - 60000)) {
+            if (time > (currentTime - 60000) && time < currentTime) {
                 minuteCounter++;
             }
         }
@@ -31,7 +31,7 @@ public class CounterServiceImpl implements CounterService {
         long hourCounter = 0;
         long currentTime = new Date().getTime();
         for (Long time : counterDataList) {
-            if (time > (currentTime - 3600000)) {
+            if (time > (currentTime - 3600000) && time < currentTime) {
                 hourCounter++;
             }
         }
@@ -44,7 +44,7 @@ public class CounterServiceImpl implements CounterService {
         long dayCounter = 0;
         long currentTime = new Date().getTime();
         for (Long time : counterDataList) {
-            if (time > (currentTime - 86400000)) {
+            if (time > (currentTime - 86400000) && time < currentTime) {
                 dayCounter++;
             }
         }
