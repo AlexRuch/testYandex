@@ -4,15 +4,12 @@ package org.ruchyov.service.impl;
 import org.ruchyov.service.CounterService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service("counterService")
-class CounterServiceImpl implements CounterService {
+public class CounterServiceImpl implements CounterService {
 
-    static List<Long> CounterDataList = new ArrayList<>();
+    public static List<Long> CounterDataList = Collections.synchronizedList(new ArrayList<>());
 
 
     @Override
